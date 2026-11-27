@@ -1,0 +1,28 @@
+# Python environment
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Dataset: 86 MB public file (MedMNIST OrganSMNIST 64x64, CC BY 4.0).
+# Download link and MD5 are in README.md.
+data/*.npz
+organsmnist_64*.npz
+
+# Trained weights (re-created by the training scripts; results/ keeps every number)
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+*.keras
+
+# Console logs of the training runs (generated output)
+logs/
+
+# Editor / OS
+.vscode/
+.idea/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
