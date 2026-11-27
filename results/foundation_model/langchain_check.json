@@ -1,0 +1,38 @@
+{
+  "chain": "RunnableLambda(build_inputs: PromptTemplate) | RunnableLambda(run_finetuned_clip) | RunnableLambda(parse_answers: PromptTemplate)",
+  "adapter_dir": "checkpoints\\clip_lora_seed42",
+  "template": "a grayscale medical image of the {organ}.",
+  "n_test_images": 8827,
+  "seconds": 69.23017597198486,
+  "agreement_with_plain_pytorch": 1.0,
+  "max_probability_difference": 0.0,
+  "test_accuracy_via_chain": 0.8014047807862241,
+  "test_macro_f1_via_chain": 0.7409423231773418,
+  "examples": [
+    {
+      "index": 0,
+      "true_organ": "kidney-left",
+      "answer": "Predicted organ: kidney-right (class 5), confidence 1.00"
+    },
+    {
+      "index": 1,
+      "true_organ": "liver",
+      "answer": "Predicted organ: liver (class 6), confidence 1.00"
+    },
+    {
+      "index": 2,
+      "true_organ": "liver",
+      "answer": "Predicted organ: liver (class 6), confidence 1.00"
+    },
+    {
+      "index": 3,
+      "true_organ": "lung-right",
+      "answer": "Predicted organ: lung-right (class 8), confidence 1.00"
+    },
+    {
+      "index": 4,
+      "true_organ": "pancreas",
+      "answer": "Predicted organ: pancreas (class 9), confidence 1.00"
+    }
+  ]
+}

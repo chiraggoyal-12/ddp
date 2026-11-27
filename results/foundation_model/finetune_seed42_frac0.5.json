@@ -1,0 +1,343 @@
+{
+  "seed": 42,
+  "train_fraction": 0.5,
+  "n_train_images": 6966,
+  "model": "openai/clip-vit-base-patch32",
+  "template": "a grayscale medical image of the {organ}.",
+  "n_params": 152260353,
+  "n_trainable_params": 983040,
+  "recipe": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "out_proj"
+    ],
+    "optimizer": "AdamW (weight decay 0.01)",
+    "learning_rate": 0.0002,
+    "batch_size": 16,
+    "max_epochs": 10,
+    "early_stopping_patience": 3
+  },
+  "device": "NVIDIA GeForce MX570",
+  "epochs_run": 5,
+  "best_epoch": 2,
+  "best_val_loss": 0.26680228114128113,
+  "stopped_at_epoch_cap": false,
+  "train_seconds": 835.5179641246796,
+  "peak_gpu_memory_mb": 1265.095703125,
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "val_loss": 2.6225106716156006,
+      "val_accuracy": 0.11541598694942903,
+      "seconds": 0.0
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.660926227849549,
+      "val_loss": 0.37422311305999756,
+      "val_accuracy": 0.8560358890701468,
+      "seconds": 157.81072115898132
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3433137215479263,
+      "val_loss": 0.26680228114128113,
+      "val_accuracy": 0.8772430668841762,
+      "seconds": 163.32354259490967
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.23918005324816724,
+      "val_loss": 0.28592997789382935,
+      "val_accuracy": 0.8968189233278956,
+      "seconds": 156.96765661239624
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.18159079923797983,
+      "val_loss": 0.42240506410598755,
+      "val_accuracy": 0.8588907014681892,
+      "seconds": 179.6548297405243
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.13608343004214074,
+      "val_loss": 0.2778147757053375,
+      "val_accuracy": 0.9053833605220228,
+      "seconds": 177.71091675758362
+    }
+  ],
+  "val": {
+    "n_samples": 2452,
+    "accuracy": 0.8772430668841762,
+    "macro_precision": 0.8318755676113287,
+    "macro_recall": 0.8111013576320367,
+    "macro_f1": 0.7965140193870274,
+    "per_class_f1": [
+      0.9675675675675676,
+      0.5,
+      0.5247524752475248,
+      0.9834710743801653,
+      0.656934306569343,
+      0.3333333333333333,
+      0.9839679358717435,
+      0.9581749049429658,
+      0.9222011385199241,
+      0.9652650822669104,
+      0.9659863945578231
+    ],
+    "per_class_recall": [
+      0.9521276595744681,
+      0.4807692307692308,
+      0.5578947368421052,
+      0.967479674796748,
+      0.9642857142857143,
+      0.20754716981132076,
+      1.0,
+      0.9655172413793104,
+      0.8836363636363637,
+      0.9428571428571428,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        179,
+        4,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        50,
+        54,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        42,
+        53,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        238,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        7
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        135,
+        3,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        124,
+        33,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        491,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        252,
+        9,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        13,
+        243,
+        0,
+        4
+      ],
+      [
+        3,
+        0,
+        0,
+        0,
+        11,
+        1,
+        0,
+        0,
+        0,
+        264,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        213
+      ]
+    ],
+    "femur": {
+      "n_true_femur": 199,
+      "femur_detected_rate": 1.0,
+      "side_accuracy": 0.5175879396984925,
+      "true_left_pred_right": 54,
+      "true_right_pred_left": 42,
+      "share_of_femur_predictions_that_say_left": 0.4623115577889447
+    }
+  },
+  "val_calibration": {
+    "mean_confidence": 0.8960655306573793,
+    "accuracy": 0.8772430668841762,
+    "ece": 0.02026499187965768,
+    "error_detection_auroc": 0.9059480949137464,
+    "accuracy_lowest_10pct_confidence": 0.491869918699187,
+    "accuracy_other_90pct": 0.9202175883952856,
+    "reliability_bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 1,
+        "mean_confidence": 0.23427793383598328,
+        "accuracy": 0.0
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 4,
+        "mean_confidence": 0.39313825964927673,
+        "accuracy": 0.25
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 18,
+        "mean_confidence": 0.45730336341593003,
+        "accuracy": 0.5555555555555556
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 280,
+        "mean_confidence": 0.5330799473183495,
+        "accuracy": 0.48928571428571427
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 83,
+        "mean_confidence": 0.6531550532363983,
+        "accuracy": 0.6506024096385542
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 107,
+        "mean_confidence": 0.7550893960712112,
+        "accuracy": 0.5794392523364486
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 227,
+        "mean_confidence": 0.8561422698823365,
+        "accuracy": 0.7929515418502202
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 1732,
+        "mean_confidence": 0.9864326064360885,
+        "accuracy": 0.9855658198614319
+      }
+    ]
+  },
+  "adapter_dir": "checkpoints\\clip_lora_seed42_frac0.5"
+}

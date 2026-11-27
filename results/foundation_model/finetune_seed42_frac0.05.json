@@ -1,0 +1,350 @@
+{
+  "seed": 42,
+  "train_fraction": 0.05,
+  "n_train_images": 697,
+  "model": "openai/clip-vit-base-patch32",
+  "template": "a grayscale medical image of the {organ}.",
+  "n_params": 152260353,
+  "n_trainable_params": 983040,
+  "recipe": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "out_proj"
+    ],
+    "optimizer": "AdamW (weight decay 0.01)",
+    "learning_rate": 0.0002,
+    "batch_size": 16,
+    "max_epochs": 10,
+    "early_stopping_patience": 3
+  },
+  "device": "NVIDIA GeForce MX570",
+  "epochs_run": 6,
+  "best_epoch": 3,
+  "best_val_loss": 0.5555784106254578,
+  "stopped_at_epoch_cap": false,
+  "train_seconds": 186.3070788383484,
+  "peak_gpu_memory_mb": 1265.095703125,
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "val_loss": 2.6225106716156006,
+      "val_accuracy": 0.11541598694942903,
+      "seconds": 0.0
+    },
+    {
+      "epoch": 1,
+      "train_loss": 1.4918026568386784,
+      "val_loss": 0.9962170124053955,
+      "val_accuracy": 0.5522022838499184,
+      "seconds": 36.34898900985718
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.7316603862401232,
+      "val_loss": 0.7658955454826355,
+      "val_accuracy": 0.6700652528548124,
+      "seconds": 34.46488833427429
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.47042704128808577,
+      "val_loss": 0.5555784106254578,
+      "val_accuracy": 0.7451060358890701,
+      "seconds": 28.93520712852478
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.3183433596082192,
+      "val_loss": 0.6222506165504456,
+      "val_accuracy": 0.7336867862969005,
+      "seconds": 28.84041690826416
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.23860804255586784,
+      "val_loss": 0.5657368898391724,
+      "val_accuracy": 0.785889070146819,
+      "seconds": 28.738685369491577
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.18149584903778612,
+      "val_loss": 0.611651599407196,
+      "val_accuracy": 0.7883360522022839,
+      "seconds": 28.903593063354492
+    }
+  ],
+  "val": {
+    "n_samples": 2452,
+    "accuracy": 0.7451060358890701,
+    "macro_precision": 0.7120177187738292,
+    "macro_recall": 0.6761559213555481,
+    "macro_f1": 0.6435250732678648,
+    "per_class_f1": [
+      0.7898089171974523,
+      0.6620689655172414,
+      0.11009174311926606,
+      0.9435483870967742,
+      0.45768025078369906,
+      0.49498327759197325,
+      0.9790209790209791,
+      0.25,
+      0.6755674232309746,
+      0.8607142857142858,
+      0.8552915766738661
+    ],
+    "per_class_recall": [
+      0.6595744680851063,
+      0.9230769230769231,
+      0.06315789473684211,
+      0.9512195121951219,
+      0.5214285714285715,
+      0.46540880503144655,
+      0.9979633401221996,
+      0.14559386973180077,
+      0.92,
+      0.8607142857142858,
+      0.9295774647887324
+    ],
+    "confusion_matrix": [
+      [
+        124,
+        2,
+        1,
+        4,
+        2,
+        0,
+        0,
+        0,
+        0,
+        25,
+        30
+      ],
+      [
+        0,
+        96,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        88,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        234,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        11
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        73,
+        63,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        74,
+        74,
+        0,
+        0,
+        0,
+        7,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        490,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        38,
+        221,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        15,
+        5,
+        253,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        28,
+        3,
+        0,
+        0,
+        0,
+        241,
+        6
+      ],
+      [
+        2,
+        0,
+        0,
+        5,
+        2,
+        0,
+        5,
+        0,
+        0,
+        1,
+        198
+      ]
+    ],
+    "femur": {
+      "n_true_femur": 199,
+      "femur_detected_rate": 0.9899497487437185,
+      "side_accuracy": 0.5177664974619289,
+      "true_left_pred_right": 7,
+      "true_right_pred_left": 88,
+      "share_of_femur_predictions_that_say_left": 0.934010152284264
+    }
+  },
+  "val_calibration": {
+    "mean_confidence": 0.7863292773580862,
+    "accuracy": 0.7451060358890701,
+    "ece": 0.043548378819937034,
+    "error_detection_auroc": 0.816422988505747,
+    "accuracy_lowest_10pct_confidence": 0.46747967479674796,
+    "accuracy_other_90pct": 0.7760652765185857,
+    "reliability_bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 6,
+        "mean_confidence": 0.25020118554433185,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 49,
+        "mean_confidence": 0.3601668264184679,
+        "accuracy": 0.40816326530612246
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 111,
+        "mean_confidence": 0.4600463700187099,
+        "accuracy": 0.40540540540540543
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 518,
+        "mean_confidence": 0.5460239389918485,
+        "accuracy": 0.527027027027027
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 219,
+        "mean_confidence": 0.6443101927025677,
+        "accuracy": 0.5844748858447488
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 235,
+        "mean_confidence": 0.7540144877230868,
+        "accuracy": 0.5617021276595745
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 251,
+        "mean_confidence": 0.8463061736874371,
+        "accuracy": 0.749003984063745
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 1063,
+        "mean_confidence": 0.9824122978288502,
+        "accuracy": 0.9774223894637818
+      }
+    ]
+  },
+  "adapter_dir": "checkpoints\\clip_lora_seed42_frac0.05"
+}

@@ -1,0 +1,378 @@
+{
+  "seed": 7,
+  "train_fraction": 1.0,
+  "n_train_images": 13932,
+  "model": "openai/clip-vit-base-patch32",
+  "template": "a grayscale medical image of the {organ}.",
+  "n_params": 152260353,
+  "n_trainable_params": 983040,
+  "recipe": {
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "out_proj"
+    ],
+    "optimizer": "AdamW (weight decay 0.01)",
+    "learning_rate": 0.0002,
+    "batch_size": 16,
+    "max_epochs": 10,
+    "early_stopping_patience": 3
+  },
+  "device": "NVIDIA GeForce MX570",
+  "epochs_run": 10,
+  "best_epoch": 7,
+  "best_val_loss": 0.17196457087993622,
+  "stopped_at_epoch_cap": false,
+  "train_seconds": 3456.1983518600464,
+  "peak_gpu_memory_mb": 1265.095703125,
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": null,
+      "val_loss": 2.6225106716156006,
+      "val_accuracy": 0.11541598694942903,
+      "seconds": 0.0
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.5113293655022033,
+      "val_loss": 0.32955336570739746,
+      "val_accuracy": 0.8613376835236541,
+      "seconds": 305.86956548690796
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2419319027243864,
+      "val_loss": 0.2355606108903885,
+      "val_accuracy": 0.8984502446982056,
+      "seconds": 319.72123670578003
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.17370852536409281,
+      "val_loss": 0.31034329533576965,
+      "val_accuracy": 0.883768352365416,
+      "seconds": 321.5373070240021
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.13875159056975347,
+      "val_loss": 0.21120469272136688,
+      "val_accuracy": 0.916394779771615,
+      "seconds": 396.13013529777527
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.11665883979890397,
+      "val_loss": 0.22263626754283905,
+      "val_accuracy": 0.9188417618270799,
+      "seconds": 398.8219690322876
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.10620982328747947,
+      "val_loss": 0.241896390914917,
+      "val_accuracy": 0.9155791190864601,
+      "seconds": 369.2224419116974
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.10358466556099855,
+      "val_loss": 0.17196457087993622,
+      "val_accuracy": 0.9298531810766721,
+      "seconds": 330.36471581459045
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.09097930703206054,
+      "val_loss": 0.25781551003456116,
+      "val_accuracy": 0.9188417618270799,
+      "seconds": 333.5700981616974
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.08721914040196811,
+      "val_loss": 0.2690216898918152,
+      "val_accuracy": 0.9237357259380098,
+      "seconds": 357.1421945095062
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.07798218716150251,
+      "val_loss": 0.24674034118652344,
+      "val_accuracy": 0.9257748776508973,
+      "seconds": 323.716295003891
+    }
+  ],
+  "val": {
+    "n_samples": 2452,
+    "accuracy": 0.9298531810766721,
+    "macro_precision": 0.8796187284206183,
+    "macro_recall": 0.8769189690314515,
+    "macro_f1": 0.8763955387499791,
+    "per_class_f1": [
+      0.9555555555555556,
+      0.5982905982905983,
+      0.4457831325301205,
+      0.9939393939393939,
+      0.8710801393728222,
+      0.9073482428115016,
+      0.9929221435793731,
+      0.9657794676806084,
+      0.957169459962756,
+      0.9663716814159292,
+      0.9861111111111112
+    ],
+    "per_class_recall": [
+      0.9148936170212766,
+      0.6730769230769231,
+      0.3894736842105263,
+      1.0,
+      0.8928571428571429,
+      0.8930817610062893,
+      1.0,
+      0.9731800766283525,
+      0.9345454545454546,
+      0.975,
+      1.0
+    ],
+    "confusion_matrix": [
+      [
+        172,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        3
+      ],
+      [
+        0,
+        70,
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        58,
+        37,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        246,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        125,
+        11,
+        0,
+        0,
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        16,
+        142,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        491,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        254,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        11,
+        257,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        6,
+        1,
+        0,
+        0,
+        0,
+        273,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        213
+      ]
+    ],
+    "femur": {
+      "n_true_femur": 199,
+      "femur_detected_rate": 1.0,
+      "side_accuracy": 0.5376884422110553,
+      "true_left_pred_right": 34,
+      "true_right_pred_left": 58,
+      "share_of_femur_predictions_that_say_left": 0.6432160804020101
+    }
+  },
+  "val_calibration": {
+    "mean_confidence": 0.9483356033656959,
+    "accuracy": 0.9298531810766721,
+    "ece": 0.01848242228902381,
+    "error_detection_auroc": 0.9516982864137088,
+    "accuracy_lowest_10pct_confidence": 0.5121951219512195,
+    "accuracy_other_90pct": 0.9764279238440616,
+    "reliability_bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 0,
+        "mean_confidence": null,
+        "accuracy": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 3,
+        "mean_confidence": 0.3582911292711894,
+        "accuracy": 0.0
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 5,
+        "mean_confidence": 0.4509955048561096,
+        "accuracy": 0.4
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 195,
+        "mean_confidence": 0.5402004691270682,
+        "accuracy": 0.5025641025641026
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 40,
+        "mean_confidence": 0.6386356830596924,
+        "accuracy": 0.575
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 27,
+        "mean_confidence": 0.7466203062622635,
+        "accuracy": 0.7037037037037037
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 38,
+        "mean_confidence": 0.8533911218768672,
+        "accuracy": 0.6578947368421053
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 2144,
+        "mean_confidence": 0.9974425927416157,
+        "accuracy": 0.9855410447761194
+      }
+    ]
+  },
+  "adapter_dir": "checkpoints\\clip_lora_seed7"
+}
