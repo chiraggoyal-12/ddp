@@ -1,0 +1,16 @@
+{
+  "checkpoint": "model_a_baseline_best.keras (seed 42)",
+  "device": "cuda",
+  "val": {
+    "same_prediction_rate": 1.0,
+    "max_probability_difference": 1.3709068298339844e-06,
+    "accuracy": 0.8907014681892332,
+    "macro_f1": 0.8053437640071799
+  },
+  "test": {
+    "same_prediction_rate": 1.0,
+    "max_probability_difference": 1.4007091522216797e-06,
+    "accuracy": 0.7338846720290019,
+    "macro_f1": 0.6839559681651532
+  }
+}
